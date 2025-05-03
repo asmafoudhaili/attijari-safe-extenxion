@@ -5,45 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CyberGuard</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    html, body {
+      margin: 0;
+      padding: 0;
       width: 300px;
       height: 350px;
+      overflow: hidden; /* Prevent scrollbars */
+    }
+
+    body {
+      font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: #f4f4f4;
-      border-radius: 15px;
+      background: white;
+      border-radius: 20px; /* Apply rounded edges */
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      margin: 0;
+      box-sizing: border-box; /* Ensure padding doesn't increase size */
       padding: 10px;
     }
-    h2 {
+
+    .logo {
+      width: 150px; /* Adjust size as needed */
+      height: auto;
       margin: 10px 0;
-      color: #333;
     }
+
     #status {
       font-weight: bold;
       padding: 10px;
+      display: none; /* Hide status until signed in */
     }
+
     #user-info {
       margin: 10px 0;
       font-size: 14px;
     }
+
     .login-form {
       display: flex;
       flex-direction: column;
       width: 100%;
       max-width: 250px;
     }
+
     .login-form input {
       margin: 5px 0;
       padding: 8px;
       border: 1px solid #ccc;
       border-radius: 5px;
     }
+
     #login-button, #logout-button {
       background-color: #4285f4;
       color: white;
@@ -53,15 +67,19 @@
       cursor: pointer;
       margin-top: 10px;
     }
+
     #login-button:hover, #logout-button:hover {
       background-color: #357ae8;
     }
+
     #logout-button {
       background-color: #db6161;
     }
+
     #logout-button:hover {
       background-color: #c55555;
     }
+
     .error {
       color: red;
       font-size: 12px;
@@ -70,7 +88,7 @@
   </style>
 </head>
 <body>
-  <h2>Attijari Safe - التجاري أمان</h2>
+  <img src="icons/Attijari Bank (3).png" alt="Attijari Bank Logo" class="logo">
   <p id="status">Checking...</p>
   <p id="user-info">Not signed in</p>
   <div class="login-form" id="login-form">
