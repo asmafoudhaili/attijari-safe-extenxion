@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "CyberGuard Plugin",
+  "version": "1.0",
+  "description": "Detects phishing sites and scans copied code for security risks.",
+  "permissions": ["activeTab", "storage", "scripting", "notifications"],
+  "host_permissions": [
+    "http://localhost:8080/*",
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/icon.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

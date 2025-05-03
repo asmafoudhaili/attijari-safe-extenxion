@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberGuard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 300px;
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #f4f4f4;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      margin: 0;
+      padding: 10px;
+    }
+    h2 {
+      margin: 10px 0;
+      color: #333;
+    }
+    #status {
+      font-weight: bold;
+      padding: 10px;
+    }
+    #user-info {
+      margin: 10px 0;
+      font-size: 14px;
+    }
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 250px;
+    }
+    .login-form input {
+      margin: 5px 0;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #login-button, #logout-button {
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    #login-button:hover, #logout-button:hover {
+      background-color: #357ae8;
+    }
+    #logout-button {
+      background-color: #db6161;
+    }
+    #logout-button:hover {
+      background-color: #c55555;
+    }
+    .error {
+      color: red;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Attijari Safe - التجاري أمان</h2>
+  <p id="status">Checking...</p>
+  <p id="user-info">Not signed in</p>
+  <div class="login-form" id="login-form">
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button id="login-button">Sign In</button>
+    <p id="error" class="error"></p>
+  </div>
+  <button id="logout-button" style="display: none;">Sign Out</button>
+  <script src="popup.js"></script>
+</body>
+</html>
